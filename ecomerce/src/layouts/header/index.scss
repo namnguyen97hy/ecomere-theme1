@@ -6,7 +6,7 @@
     }
     .header {
         padding: 0!important;
-        background-color: yellowgreen;
+        z-index: 6;
     li {
         list-style-type: none;
         margin: $margin_md;
@@ -27,8 +27,9 @@
         }
 
         &_item {
-            padding: $padding_lg 0;
+            padding: 2.5rem 0;
             cursor: pointer;
+            z-index:4;
             .align_center{
                 display: flex;
                 align-items: center;
@@ -38,12 +39,14 @@
             .extend {
                 display: flex;
                 position: absolute;
+                background-color: white;
                 left: 0;
                 top:160%;
+                z-index: 10;
                 opacity: 0;
                 visibility: hidden;
                 padding: $padding_md;
-                box-shadow: 2px 2px 8px 2px #888888;
+                box-shadow: 2px 2px 6px 2px #888888;
                 .shop_item {
                     display: flex;
                     flex-direction: column;
@@ -93,6 +96,7 @@
             .extend_page {
                 flex-direction: column!important;
                 position: absolute;
+                background-color: white;
                 opacity: 0;
                 visibility: hidden;
                 left: 0;
@@ -132,6 +136,9 @@
     .menu_humberger {
         font-size: 20px;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        @media screen and (min-width:1200px) {
+            display: none;
+        }
         .overlay {
             position: absolute;
             top:0;
@@ -348,7 +355,7 @@
 }
 @media screen and (max-width: 1200px) {
     .box_header{
-        padding: 0 2.5rem;
+        padding: 0.75rem 2.5rem;
         img.logo_img{
             width: 120px;
         }
@@ -365,7 +372,7 @@
 }
 @media screen and (max-width: 992px) {
     .box_header{
-        padding: 0 2rem;
+        padding: 0.75rem 2rem;
         img.logo_img{
             width: 100px;
         }
@@ -379,7 +386,7 @@
 }
 @media screen and (max-width: 768px) {
     .box_header{
-        padding: 0 1.5rem;
+        padding: 0.5rem 1.5rem;
         .header {
             .menu_humberger_container {
                 width: 40%;
@@ -398,7 +405,7 @@
 }
 @media screen and (max-width: 576px) {
     .box_header{
-        padding: 0 0.5rem;
+        padding: 0.5rem 0rem;
         img.logo_img {
             width: 65px;
         }

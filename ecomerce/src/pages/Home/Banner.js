@@ -1,5 +1,4 @@
 import React from "react";
-import "./Banner.scss";
 import ButtonPrimary from "../../components/ButtonPrimary";
 import Image1 from "./../../assets/images/banner_top.jpg";
 import Image2 from "./../../assets/images/banner_top_2.jpg";
@@ -15,7 +14,7 @@ const Banner = (props) => {
     ]
     return (
         <div className="list_banner">
-            <Carousel prevLabel="" pause="hover" slide="false" interval="9000000">
+            <Carousel prevLabel="" nextLabel="" pause="hover" slide="false" interval="5000" >
                 {listBanner.map(item => {
                     return (
                         <Carousel.Item>

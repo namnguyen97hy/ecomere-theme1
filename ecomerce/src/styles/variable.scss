@@ -25,22 +25,41 @@ h2 {
     font-size: 55px;
     margin: 0.25rem 0;
 }
-
+h3{
+    font-size: 36px;
+    margin: 0.25rem 0;
+}
+@media screen and (min-width: 1200px) {
+    .box_container {
+         padding: 0 8rem;
+    }
+ }
 @media screen and (max-width: 1200px) {
-   
+   .box_container {
+        padding: 0 2.5rem;
+   }
 }
 @media screen and (max-width: 992px) {
    h2 {
        font-size: 42px;
    }
+   .box_container {
+       padding: 0 2rem;
+    }
+   
 }
 @media screen and (max-width: 768px) {
     h2 {
         font-size: 32px;
     }
+    .box_container {
+       padding: 0 1.5rem;
+    }
 }
 @media screen and (max-width: 576px) {
-    
+    .box_container {
+       padding: 0 0rem ;
+    }
 }
 
 
