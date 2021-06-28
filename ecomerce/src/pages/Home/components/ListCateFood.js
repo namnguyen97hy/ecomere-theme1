@@ -1,14 +1,13 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import ImageCate1 from "./../../assets/images/categories_1.jpg"
-import ImageCate2 from "./../../assets/images/categories_2.jpg"
-import ImageCate3 from "./../../assets/images/categories_3.jpg"
-import ImageCate4 from "./../../assets/images/categories_4.jpg";
-import {Grid} from "@material-ui/core";
-import Carousel from 'react-bootstrap/Carousel';
-import 'bootstrap/dist/css/bootstrap.min.css';;
+import "slick-carousel/slick/slick.css";
+import ImageCate1 from "./../../../assets/images/categories_1.jpg";
+import ImageCate2 from "./../../../assets/images/categories_2.jpg";
+import ImageCate3 from "./../../../assets/images/categories_3.jpg";
+import ImageCate4 from "./../../../assets/images/categories_4.jpg";
+;
 
 
 const ListCateFood = (props) => {

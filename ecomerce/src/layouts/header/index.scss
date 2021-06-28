@@ -1,5 +1,16 @@
 @import "./../../styles/index.scss";
-.box_header {
+
+#header_menu {
+    position: fixed!important;
+    top:0;
+    width: 100%;
+    background: white;
+    z-index: 15;
+    padding-block: 1rem;
+    box-shadow: 0 2px 10px -2px gray;
+}
+
+.box_container {
     padding: 0 4rem;
     img.logo_img {
         width: 120px;
@@ -354,7 +365,7 @@
     top: 0;
 }
 @media screen and (max-width: 1200px) {
-    .box_header{
+    .box_container{
         padding: 0.75rem 2.5rem;
         img.logo_img{
             width: 120px;
@@ -371,7 +382,7 @@
     
 }
 @media screen and (max-width: 992px) {
-    .box_header{
+    .box_container{
         padding: 0.75rem 2rem;
         img.logo_img{
             width: 100px;
@@ -385,7 +396,7 @@
     
 }
 @media screen and (max-width: 768px) {
-    .box_header{
+    .box_container{
         padding: 0.5rem 1.5rem;
         .header {
             .menu_humberger_container {
@@ -404,7 +415,10 @@
     }        
 }
 @media screen and (max-width: 576px) {
-    .box_header{
+    #header_menu {
+        padding: 1rem 1.5rem!important;
+    }
+    .box_container{
         padding: 0.5rem 0rem;
         img.logo_img {
             width: 65px;

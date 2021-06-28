@@ -1,0 +1,113 @@
+@import "./../../../styles/index.scss";
+.product_item {
+    font-family: "Poppins";
+    p {
+        margin: 0.5rem 0;
+    }
+    ul {
+        margin-left: 0;
+        padding-left: 0;
+    }
+    li {
+        list-style-type: none;
+        display: inline-block;
+    }
+    .big_img {
+        width: 100%;
+    }
+    .small_img {
+        margin: 1rem 0.25rem;
+        width: 100%!important;
+        img {
+            width: 100%;
+
+        }
+    }
+    .active {
+        outline: 1px solid $color_yellow_primary;
+    }
+    .info_product {
+        #title {
+            color: #333333;
+            margin-right: 0.75rem;
+            font-size: 18px;
+            font-weight: $font-weight-bold-md;
+        }
+        .name {
+
+        }
+        .avaiable {
+            .status {
+                color: $color_yellow_primary;
+                font-weight: $font-weight-bold-md
+            }
+        }
+        .price_prd {
+            font-size: 20px;
+            margin: 0.5rem 0;
+            .sale_price {
+                color: #333333;
+                margin-right: 0.5rem;
+                font-weight: $font-weight-bold-md;
+            }
+            .real_price {
+                color: #999999;
+                text-decoration: line-through;
+            }
+        }
+        ul.counter {
+            li {
+                padding: 0.5rem;
+                margin-right: 1rem;
+                box-sizing: border-box;
+                background: $color_yellow_primary;
+                color: white;
+                width: 65px;
+                text-align: center;
+                height: 75px;
+                font-weight: $font-weight-bold-md;
+                border-radius: 5px;
+                p:nth-child(1) {
+                    font-size: 20px;
+                    margin-bottom: -0.5rem;
+                }
+            }
+        }
+        .desc_prd {
+            color: #999999;
+        }
+        .list-material_prd {
+            margin: 1rem 0;
+        }
+        .option {
+            color: #999999;
+            margin: 0 0.5rem;
+            border-bottom: 2px solid #999999;
+        }
+        .quanlity {
+            margin: 1rem 0;
+            .descrease,
+            .increase {
+                padding: 0.25rem 0.5rem;
+                background-color: #f7f7f7;
+                border-radius: 3px;
+                color: #999999;
+                text-align: center;
+                cursor: pointer;
+                &:hover {
+                    background-color: $color_yellow_primary;
+                    color: white;
+                    transition: all 0.2s ease;
+                }
+            }
+            input {
+                width: 50px;
+                margin: 0 0.5rem;
+                padding: 0.25rem;
+                outline: none;
+                font-size: 16px;
+                border: none;      
+            }
+        }
+    }
+}

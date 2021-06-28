@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {Grid, Box, Container} from "@material-ui/core"
 import logoImg from "./../../assets/images/logo.png";
 import Menu from "./Menu";
@@ -12,53 +12,68 @@ import "./index.scss"
 
 const Header = (props) => {
     const [isShowHambMenu, setShowHambMenu] = useState(false);
-    const [isShowSearchModal, setShowSearchModal] = useState(false)
+    const [isShowSearchModal, setShowSearchModal] = useState(false);
+    const [scrolling, setScrolling] = useState(false)
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY === 0 && scrolling === true) {
+                setScrolling(false)
+            }
+            else if (window.scrollY !== 0 && scrolling === false) {
+                setScrolling(true);
+            }
+        })
+    },[window.scrollY])
+    const menuId = scrolling ? "header_menu" : ""
     return (
-            <Container maxWidth="xl" style={{position:"relative"}}>
-                <Box className="box_header">
-                    <Grid container alignItems="center" justify="space-between" spacing={3} className="header">
-                        <Grid item md={2} xs={6}>
-                            <img src={logoImg} alt="Logo Image" className="logo_img" />
-                        </Grid>
-                        <Grid item md={6} style={{padding:0}}> 
-                            <Menu isShowHambMenu = {isShowHambMenu}/>
-                        </Grid>
-                        <Grid item md={4} xs={6} style={{padding:0,margin: "1rem 0 0 0"}} className="list_action_btn">
-                            <ul className="action_btn">
-                                <li className="bar_menu" onClick={() => {setShowHambMenu(!isShowHambMenu)}} >
-                                    <MenuIcon className="action_icon"/>
-                                </li>
-                                <li className="action_btn_item" onClick={() => setShowSearchModal(true)}>
-                                    <SearchIcon className="action_icon"/>
-                                    <p>Search</p>
-                                </li>
-                                <li className="action_btn_item">
-                                    <AccountCircleIcon className="action_icon"/>
-                                    <p>Account</p>
-                                </li>
-                                <li className="action_btn_item">
-                                    <FavoriteBorderIcon className="action_icon"/>
-                                    <p>WishList</p>
-                                    <span className="quanlity">1</span>
-                                </li>
-                                <li className="action_btn_item">
-                                    <LocalMallIcon className="action_icon"/>
-                                    <p>Cart</p>
-                                    <span className="quanlity">1</span>
-                                </li>
-                            </ul>
-                        </Grid>
+        <Container maxWidth="xl" style={{position:"relative"}} id={menuId} >
+            <Box className="box_container">
+                <Grid container alignItems="center" justify="space-between" spacing={3} className="header">
+                    <Grid item md={2} xs={6}>
+                        <img src={logoImg} alt="Logo Image" className="logo_img" />
                     </Grid>
-                    <div className={`search ${isShowSearchModal ? "show" : ""}`}>
-                        <div className="search_overlay" onClick={() => setShowSearchModal(false)}></div>
-                        <div className={`search_container ${isShowSearchModal ? 'showInput' : ''}`}>
-                            <input className="input" />
-                            <span className="iconSearch"><SearchIcon /></span>
-                            <span className="iconCancel" onClick={() => setShowSearchModal(false)}><ClearIcon /></span>
-                        </div>
+                    <Grid item md={6} style={{padding:0}}> 
+                        <Menu 
+                            isShowHambMenu = {isShowHambMenu}
+                            hiddenHambMenu = {() => setShowHambMenu(false)}
+                        />
+                    </Grid>
+                    <Grid item md={4} xs={6} style={{padding:0,margin: "1rem 0 0 0"}} className="list_action_btn">
+                        <ul className="action_btn">
+                            <li className="bar_menu" onClick={() => {setShowHambMenu(true)}} >
+                                <MenuIcon className="action_icon"/>
+                            </li>
+                            <li className="action_btn_item" onClick={() => setShowSearchModal(true)}>
+                                <SearchIcon className="action_icon"/>
+                                <p>Search</p>
+                            </li>
+                            <li className="action_btn_item">
+                                <AccountCircleIcon className="action_icon"/>
+                                <p>Account</p>
+                            </li>
+                            <li className="action_btn_item">
+                                <FavoriteBorderIcon className="action_icon"/>
+                                <p>WishList</p>
+                                <span className="quanlity">1</span>
+                            </li>
+                            <li className="action_btn_item">
+                                <LocalMallIcon className="action_icon"/>
+                                <p>Cart</p>
+                                <span className="quanlity">1</span>
+                            </li>
+                        </ul>
+                    </Grid>
+                </Grid>
+                <div className={`search ${isShowSearchModal ? "show" : ""}`}>
+                    <div className="search_overlay" onClick={() => setShowSearchModal(false)}></div>
+                    <div className={`search_container ${isShowSearchModal ? 'showInput' : ''}`}>
+                        <input className="input" />
+                        <span className="iconSearch"><SearchIcon /></span>
+                        <span className="iconCancel" onClick={() => setShowSearchModal(false)}><ClearIcon /></span>
                     </div>
-                </Box>
-            </Container>
+                </div>
+            </Box>
+        </Container>
     )
 }
 export default Header

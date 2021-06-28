@@ -1,8 +1,8 @@
 import React from "react";
-import ButtonPrimary from "../../components/ButtonPrimary";
-import Image1 from "./../../assets/images/banner_top.jpg";
-import Image2 from "./../../assets/images/banner_top_2.jpg";
-import Image3 from "./../../assets/images/banner_top3.jpg";
+import ButtonPrimary from "../../../components/ButtonPrimary";
+import Image1 from "./../../../assets/images/banner_top.jpg";
+import Image2 from "./../../../assets/images/banner_top_2.jpg";
+import Image3 from "./../../../assets/images/banner_top3.jpg";
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

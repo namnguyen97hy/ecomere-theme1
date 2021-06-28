@@ -4,7 +4,7 @@ import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import RefreshIcon from '@material-ui/icons/Refresh';
-import ServiceImg from "./../../assets/images/service_img.jpg";
+import ServiceImg from "./../../../assets/images/service_img.jpg";
 
 const Service = (props) => {
     return (

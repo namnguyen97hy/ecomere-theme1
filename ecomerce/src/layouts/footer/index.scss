@@ -1,0 +1,83 @@
+@import "./../../styles/index.scss";
+.footer {
+    width: 100%;
+    background: #f7f7f7;
+    margin-top: 5rem;
+    padding: 3rem 0;
+    font-family: "Poppins";
+    li {
+        list-style-type: none;
+        color: #777777;
+        cursor: pointer;
+    }
+     ul {
+         padding-left: 0;
+     }
+    img {
+        cursor: pointer;
+    }
+    .desc {
+        margin: 1.75rem 0;
+        color: #777777;
+        font-weight: $font-weight-bold-xs;
+    }
+    ul.list_icons {
+        display: flex;
+        margin-left: 0!important;
+        padding-left: 0!important;
+        li {
+            list-style-type: none;
+            margin: 0 0.5rem;
+            cursor: pointer;
+            svg{
+                color:$color_yellow_primary
+            }
+        }
+    }
+    .footer_title {
+        font-size: 20px;
+        font-weight: $font-weight-bold-xs;
+    }
+    .list_footer_item {
+        li {
+            margin: 0.5rem 0;
+            &:hover {
+                color: $color_yellow_primary;
+                transition: all 0.3s ease-in;
+            }
+        }
+        .contact {
+            display: flex;
+            align-items: center;
+            .icon {
+                margin-right: 0.5rem;
+                svg {
+                    color: $color_yellow_primary;
+                }
+            }
+            p {
+                margin-bottom: 0.25rem;
+            }
+        }
+    }
+    
+}
+@media screen and (max-width: 1200px) {
+    
+}
+@media screen and (max-width: 992px) {
+ 
+}
+@media screen and (max-width: 768px) {
+          
+}
+@media screen and (max-width: 576px) {
+    .footer {
+        img {
+            width: 80px;
+        }
+        .footer_title {
+            font-size: 18px;
+        }
+    }
+}

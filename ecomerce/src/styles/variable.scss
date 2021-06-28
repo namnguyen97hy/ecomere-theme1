@@ -27,17 +27,25 @@ h2 {
 }
 h3{
     font-size: 36px;
+    text-align: center;
     margin: 0.25rem 0;
 }
 @media screen and (min-width: 1200px) {
     .box_container {
          padding: 0 8rem;
     }
+    .box_container--page{
+        padding: 1rem 12%;
+    }
+
  }
 @media screen and (max-width: 1200px) {
    .box_container {
         padding: 0 2.5rem;
    }
+   .box_container--page{
+    padding: 1rem 2.5%;
+    }
 }
 @media screen and (max-width: 992px) {
    h2 {
@@ -46,19 +54,36 @@ h3{
    .box_container {
        padding: 0 2rem;
     }
+    .box_container--page{
+        padding: 1rem 8%;
+    }
+    
    
 }
 @media screen and (max-width: 768px) {
     h2 {
         font-size: 32px;
     }
+    h3 {
+        font-size: 30px;
+    }
     .box_container {
        padding: 0 1.5rem;
     }
+    .box_container--page{
+        padding: 1rem 6%;
+    }
 }
 @media screen and (max-width: 576px) {
+    $margin_xl: 0rem;
     .box_container {
        padding: 0 0rem ;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    .box_container--page{
+        padding: 1rem 4%;
     }
 }
 
