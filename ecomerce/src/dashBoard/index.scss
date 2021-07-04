@@ -1,0 +1,22 @@
+@import "../styles/index.scss";
+.dashboard {
+    width: 100%;
+    overflow-x: hidden;
+    .header {
+        padding: 1.5rem ;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span {
+            svg {
+                font-size: 30px;
+                margin-top: 1.5rem;
+                cursor: pointer;
+                color: #999999;
+                &:hover {
+                    color: $color_yellow-primary;
+                }
+            }
+        }
+    }
+}

@@ -14,10 +14,10 @@ import "slick-carousel/slick/slick.css";
 import ButtonPrimary from "../../components/ButtonPrimary";
 import "./index.scss"
 const Product = (props) => {
-    const {product} = props;
+    const { product } = props;
     const history = useHistory()
-    const [isShowQuickView, setShowQuickView] = useState(false);
-    const [quanlityPrd, setQuanlityPrd] = useState(1)
+    const [ isShowQuickView, setShowQuickView ] = useState(false);
+    const [ quanlityPrd, setQuanlityPrd ] = useState(1)
 
     const useStyles = makeStyles((theme) => ({
         paper: {
@@ -139,6 +139,7 @@ const Product = (props) => {
                         </Grid>
                     </div>
                 </Modal>
+            
             </div>
             <div className="info">
                 <p className="name"  onClick={() => history.push(`/page/product/${product.name}`)}>{product.name}</p>

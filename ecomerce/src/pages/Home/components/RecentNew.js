@@ -1,63 +1,13 @@
 import { Grid } from "@material-ui/core";
 import React from "react";
-import ImageNews1 from "./../../../assets/images/new_img1.jpg";
-import ImageNews2 from "./../../../assets/images/new_img2.jpg";
-import ImageNews3 from "./../../../assets/images/new_img3.jpg";
-import ImageNews4 from "./../../../assets/images/new_img4.jpg";
-import ImageNews5 from "./../../../assets/images/new_img5.jpg";
-import ImageNews6 from "./../../../assets/images/new_img6.jpg";
-import ImageNews7 from "./../../../assets/images/new_img7.jpg";
 import ArrowForwardOutlinedIcon from '@material-ui/icons/ArrowForwardOutlined';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import { testListNews } from "../../../constants/const";
 
 const RecentNew = (props) => {
-    const testListNews = [
-        {
-            id:1,
-            image: ImageNews1,
-            title: "Green Onion Knife and Salad placed",
-            content: "Great theme! and more than this If you need help with anything, these guys got your back."
-        },
-        {
-            id:2,
-            image: ImageNews2,
-            title: "Healthy and skins for organic",
-            content: "Great theme! and more than this If you need help with anything, these guys got your back."
-        },
-        {
-            id:3,
-            image: ImageNews3,
-            title: "Fresh Organic brand and picnic",
-            content: "Great theme! and more than this If you need help with anything, these guys got your back."
-        },
-        {
-            id:4,
-            image: ImageNews4,
-            title: "Mix salad good for your health",
-            content: "Great theme! and more than this If you need help with anything, these guys got your back."
-        },
-        {
-            id:5,
-            image: ImageNews5,
-            title: "Green Onion Knife and Salad placed",
-            content: "Great theme! and more than this If you need help with anything, these guys got your back."
-        },
-        {
-            id:6,
-            image: ImageNews6,
-            title: "Green Onion Knife and Salad placed",
-            content: "Great theme! and more than this If you need help with anything, these guys got your back."
-        },
-        {
-            id:7,
-            image: ImageNews7,
-            title: "Healthy and skins for organic",
-            content: "Great theme! and more than this If you need help with anything, these guys got your back."
-        }
 
-    ]
     const settings = {
         dots: false,
         infinite: true,

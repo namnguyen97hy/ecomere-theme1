@@ -12,17 +12,17 @@ const listCollections = [
     {   
         id:1,
         image: Collection1,
-        path: ""
+        path: "bestseller"
     },
     {
         id:2,
         image: Collection2,
-        path: ""
+        path: "fastFood"
     },
     {   
         id:3,
         image: Collection3,
-        path: ""
+        path: "feature_product"
     }
 ]
 
@@ -41,7 +41,6 @@ const Menu = (props) => {
         };
     },[isShowHambMenu]);
     const history = useHistory();
-
     return (
         <>
             <ul className="menu">
@@ -51,7 +50,7 @@ const Menu = (props) => {
                     </div>
                 </li>
                 <li className="menu_item shop">
-                    <div className="align_center">
+                    <div className="align_center" onClick={() => history.push("/page/collections")}>
                         SHOP
                         <span><ExpandMoreIcon /></span>
                     </div>
@@ -62,7 +61,11 @@ const Menu = (props) => {
                                     <p className="shop_title_extend">{item.title}</p>
                                     {item.listCates.map(x => {
                                         return (
-                                            <p className="shop_name_extend" key={item.id}>{x.name}</p>
+                                            <p 
+                                                className="shop_name_extend" 
+                                                key={x.id}
+                                                onClick={() => history.push(`/page/product/${x.path}`)}
+                                            >{x.name}</p>
                                         )
                                     })}
                                 </div>
@@ -80,8 +83,12 @@ const Menu = (props) => {
                     <div className="extend">
                         {listCollections.map(item => {
                             return(
-                                <div className="collections_item" key={item.image} >
-                                    <div className="overlay"></div>
+                                <div 
+                                    className="collections_item" 
+                                    key={item.image}
+                                    onClick={() => history.push(`/page/collections/${item.path}`)} 
+                                >
+                                    <div className="overlay_collection"></div>
                                     <img src={item.image} alt="img" />
                                 </div>
                             )
@@ -102,7 +109,7 @@ const Menu = (props) => {
                     </div>
                 </li>
                 <li className="menu_item ">
-                    <div className="align_center">
+                    <div className="align_center" onClick={() => history.push("/page/blog/news")}>
                         BLOGS
                     </div>
                 </li>
@@ -123,7 +130,13 @@ const Menu = (props) => {
                     </span>
                     <ul className="list_hamb_level1" > 
                         <li className="item_level1">
-                            <div className="tab_item_level1" onClick={() =>history.push("./page/home")}>
+                            <div className="tab_item_level1" onClick={async() => {
+                                await history.push("/page/home");
+                                setTimeout(() => {
+                                    setHiddenMenuHamberger(true);
+                                    hiddenHambMenu()
+                                },1000)}}
+                            >
                                 HOME
                             </div>
                         </li>
@@ -139,13 +152,31 @@ const Menu = (props) => {
                                         <span><ExpandMoreIcon /></span>
                                     </div>
                                     <ul className={`list_hamb_level3 ${isShowExtendMenuLevel2.fresh ? "showExtendMenu" : ""}`} >
-                                        <li className="item_level3">
+                                        <li className="item_level3" onClick={async() => {
+                                            await history.push("/page/product/fruit&nuts");
+                                            setTimeout(() => {
+                                                setHiddenMenuHamberger(true);
+                                                hiddenHambMenu()
+                                            },1000)
+                                        }}>
                                             Fruit and Nuts
                                         </li>
-                                        <li className="item_level3">
+                                        <li className="item_level3" onClick={async() => {
+                                            await history.push("/page/product/oranges");
+                                            setTimeout(() => {
+                                                setHiddenMenuHamberger(true);
+                                                hiddenHambMenu()
+                                            },1000)
+                                        }}>
                                             Oranges
                                         </li>
-                                        <li className="item_level3">
+                                        <li className="item_level3"  onClick={async() => {
+                                            await history.push("/page/product/banana");
+                                            setTimeout(() => {
+                                                setHiddenMenuHamberger(true);
+                                                hiddenHambMenu()
+                                            },1000)
+                                        }}>
                                             Banana
                                         </li>
                                     </ul>
@@ -156,14 +187,32 @@ const Menu = (props) => {
                                         <span><ExpandMoreIcon /></span>
                                     </div>
                                     <ul className={`list_hamb_level3 ${isShowExtendMenuLevel2.mixed ? "showExtendMenu" : ""}`}>
-                                        <li className="item_level3">
-                                            Fruit and Nuts
+                                        <li className="item_level3" onClick={async() => {
+                                            await history.push("/page/product/nuts&yogurt");
+                                            setTimeout(() => {
+                                                setHiddenMenuHamberger(true);
+                                                hiddenHambMenu()
+                                            },1000)
+                                        }}>
+                                            Nuts and yogurt
                                         </li>
-                                        <li className="item_level3">
-                                            Oranges
+                                        <li className="item_level3" onClick={async() => {
+                                            await history.push("/page/product/apple");
+                                            setTimeout(() => {
+                                                setHiddenMenuHamberger(true);
+                                                hiddenHambMenu()
+                                            },1000)
+                                        }}>
+                                            Apple
                                         </li>
-                                        <li className="item_level3">
-                                            Banana
+                                        <li className="item_level3" onClick={async() => {
+                                            await history.push("/page/product/cucumber_detox");
+                                            setTimeout(() => {
+                                                setHiddenMenuHamberger(true);
+                                                hiddenHambMenu()
+                                            },1000)
+                                        }}>
+                                            Cucumber detox
                                         </li>
                                     </ul>
                                 </li>
@@ -173,28 +222,59 @@ const Menu = (props) => {
                                         <span><ExpandMoreIcon /></span>
                                     </div>
                                     <ul className={`list_hamb_level3 ${isShowExtendMenuLevel2.banana ? "showExtendMenu" : ""}`}>
-                                        <li className="item_level3">
-                                            Fruit and Nuts
+                                        <li className="item_level3" onClick={async() => {
+                                            await history.push("/page/product/mango");
+                                            setTimeout(() => {
+                                                setHiddenMenuHamberger(true);
+                                                hiddenHambMenu()
+                                            },1000)
+                                        }}>
+                                            Mango
                                         </li>
-                                        <li className="item_level3">
-                                            Oranges
+                                        <li className="item_level3" onClick={async() => {
+                                            await history.push("/page/product/lemon");
+                                            setTimeout(() => {
+                                                setHiddenMenuHamberger(true);
+                                                hiddenHambMenu()
+                                            },1000)
+                                        }}>
+                                            Lemon
                                         </li>
-                                        <li className="item_level3">
-                                            Banana
+                                        <li className="item_level3" onClick={async() => {
+                                            await history.push("/page/product/banana_king");
+                                            setTimeout(() => {
+                                                setHiddenMenuHamberger(true);
+                                                hiddenHambMenu()
+                                            },1000)
+                                        }}> 
+                                            Banana King
                                         </li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
                         <li className="item_level1">
-                            <div className={`tab_item_level1 ${isShowExtendMenu.collections ? "active" : ""}`} onClick={() => setShowExtendMenu({...isShowExtendMenu,collections:!isShowExtendMenu.collections})}>
+                            <div className={`tab_item_level1 ${isShowExtendMenu.collections ? "active" : ""}`} onClick={async() => {
+                                setShowExtendMenu({...isShowExtendMenu,collections:!isShowExtendMenu.collections})
+                                await history.push("/page/collections")
+                                setTimeout(() => {
+                                    setHiddenMenuHamberger(true);
+                                    hiddenHambMenu()
+                                },5000)
+                                }}>
                                 COLLECTIONS
                                 <span><ExpandMoreIcon /></span>
                             </div>
                             <ul className={`list_hamb_level2 hamb_collection ${isShowExtendMenu.collections ? "showExtendMenu" : ""}`} >
                                 {listCollections.map(item => {
                                     return (
-                                        <li className="hamb_img" key={item.id}>
+                                        <li className="hamb_img" key={item.id} onClick={async() => {
+                                            await history.push(`/page/collections/${item.path}`);
+                                            setTimeout(() => {
+                                                setHiddenMenuHamberger(true);
+                                                hiddenHambMenu()
+                                            },1000)
+                                        }}>
                                             <img src={item.image} alt="image_collection"/>
                                         </li>
                                     )
@@ -219,7 +299,14 @@ const Menu = (props) => {
                             </ul>
                         </li>
                         <li className="item_level1">
-                            <div className="tab_item_level1">
+                            <div className="tab_item_level1" 
+                                onClick={async() => {
+                                    await history.push("/page/blog/news");
+                                    setTimeout(() => {
+                                        setHiddenMenuHamberger(true);
+                                        hiddenHambMenu()
+                                    },1000)
+                            }}>
                                 BLOGS
                             </div>
                         </li>

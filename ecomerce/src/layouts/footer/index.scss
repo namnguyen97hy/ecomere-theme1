@@ -60,6 +60,13 @@
             }
         }
     }
+    .list_footer {
+        align-items: center;
+        justify-content: space-between;
+        opacity: 0;
+        display: none;
+        visibility: hidden;
+    }
     
 }
 @media screen and (max-width: 1200px) {
@@ -77,7 +84,22 @@
             width: 80px;
         }
         .footer_title {
-            font-size: 18px;
+            font-size: 15px;
+            margin: 0!important;
+        }
+        .hidden {
+            display: none!important;
+        }
+        .list_footer {
+            display: flex;
+            opacity: 1;
+            visibility: visible;
+        }
+        .list_footer_item {
+            display: none;
+        }
+        #show {
+            display: block;
         }
     }
 }

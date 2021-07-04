@@ -1,0 +1,239 @@
+
+@import "./../../../styles/index.scss";
+.collection_item {
+    scroll-behavior: smooth;
+    .filter {
+        border: 1px solid #EEEEEE;
+        padding: 1rem 1rem;
+        font-weight: 450;
+        &_title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .list_filter {
+            
+        }
+        .cate {
+            ::-webkit-scrollbar {
+                width:5px;
+                height: 30px;
+                margin-left: 2rem;
+            }
+            ::-webkit-scrollbar-track {
+                background: #f1f1f1; 
+            }
+            
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+            background: #888; 
+            }
+            
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+            }
+            .list_cate {
+                height: 200px;
+                overflow-y: auto;
+            }
+        }
+        .tag {
+            width: 100%;
+            overflow: hidden;
+            &_item {
+                border: 1px solid #999999;
+                padding: 0.25rem 0.5rem;
+                color: #999999;
+                display: inline-block;
+                margin: 0.5rem 0.5rem 0.5rem 0;
+                border-radius: 5px;
+                &:hover {
+                    background-color: black;
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+            #activeTag {
+                background-color: black!important;
+                color: white!important;
+                cursor: pointer;
+            }
+        }
+        #title {
+            font-size: 20px;
+            font-weight: $font-weight-bold-md;
+        }
+        .filter_item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0.5rem 0;
+            &:hover {
+                color: $color_yellow_primary;
+                cursor: pointer;
+            }
+            input {
+                width: 18px;
+                height: 18px;
+                margin-right: 0.75rem;
+            }
+            .name {
+                display: flex;
+                align-items: center;
+            }
+        }
+        .filter_item#active {
+            color: $color_yellow_primary;
+        }
+    }
+    .list_item {
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .list_arrange{
+                span {
+                    display: inline-block;
+                    margin: 0 0.5rem;
+                    cursor: pointer;
+                    svg {
+                        font-size: 25px;
+                    }
+                }
+                #four_line {
+
+                }
+            }
+            .sort_by{
+                span {
+                    display: inline-block;
+                    margin-right: 1rem;
+                    font-weight: 500;
+                }
+                .select {
+                    height: 40px;
+                    cursor: pointer;
+                    padding: 0.5rem;
+                    border-radius: 5px;
+                    box-sizing: border-box;
+                    outline: none;
+                }
+            }
+        }
+        &-container {
+            .list_view_one-line{
+                display: none;
+            }
+            .show {
+                margin-bottom: -1rem!important;
+                display: block!important;
+            }
+            .hidden {
+                display:none!important;
+            }
+        }
+        .panigation {
+            text-align: center;
+            margin-top: 4rem;
+            .title {
+                font-weight: 500;
+                font-size: 18px;
+            }
+            .list_page {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .page_number {
+                    display: inline-block;
+                    font-weight: 450;
+                    margin: 0.5rem;
+                    &:hover {
+                        color: $color_yellow_primary;
+                        text-decoration:1px solid $color_yellow_primary;
+                        cursor: pointer;
+                    }
+                }
+                #active {
+                    color: $color_yellow_primary;
+                }
+                .next_page {
+                    margin-top: 2px;
+                    svg {
+                        font-size: 15px;
+                    }
+                    &:hover {
+                        cursor: pointer;
+                        color: $color_yellow_primary;
+                    }
+                }
+            }
+        }
+
+    }
+}
+@media screen and (max-width:1200px) {
+    .collection_item {
+        .list_item {
+            .header {
+                .list_arrange {
+                    #four_line {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen  and (max-width:992px) {
+    .collection_item {
+        .filter {
+            &_title {
+                opacity: 1;
+                visibility: visible;
+                font-size: 18px;
+            }
+            .title_desktop {
+                display: none!important;
+            }
+            .list_filter {
+                display: none;
+            }
+            #show {
+                display: block!important;
+            }
+        }
+    }
+}
+@media screen  and (max-width:768px) {
+    .collection_item {
+        .filter {
+
+        }
+    }
+}
+@media screen  and (max-width:576px) {
+    .collection_item {
+        .filter {
+            #title {
+                font-size: 15px;
+            }
+
+        }
+        .list_item {
+            .header {
+                font-size: 15px;
+                .sort_by {
+                    span {
+                        margin-right: 0.25rem;
+                    }
+                    select {
+                        padding: 0.25rem!important
+                    }
+                }
+            }
+        }
+    }
+}

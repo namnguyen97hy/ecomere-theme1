@@ -10,9 +10,18 @@ import Image1 from "../../../assets/images/product_fresh_blueberry1.jpg";
 import Image2 from "../../../assets/images/product_fresh_blueberry2.jpg";
 import Image3 from "../../../assets/images/product_fresh_blueberry3.jpg";
 import Image4 from "../../../assets/images/product_fresh_blueberry4.jpg";
+import ImageCheckOut from "../../../assets/images/atm_checkout.png"
 import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css';
 import InnerImageZoom from 'react-inner-image-zoom'
-
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import PinterestIcon from '@material-ui/icons/Pinterest';
+import Product from "../../../components/Product";
+import ListTabDetail   from "./ListTabDetail";
+import TabOptions from "../../../components/Tabs";
+import { listItemTest1 } from "../../../constants/const";
 
 const ProductItem = (props) => {
     const { item } = useParams();
@@ -31,6 +40,34 @@ const ProductItem = (props) => {
             settings: {
               slidesToShow: 3,
               slidesToScroll: 3,
+              infinite: true,
+              dots: true
+            }
+          }
+        ]
+    };
+    const settingsRelatedPrd = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        initialSlide: 0,
+        responsive: [
+          {
+            breakpoint: 770,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
               infinite: true,
               dots: true
             }
@@ -98,11 +135,12 @@ const ProductItem = (props) => {
     ]
     const [bigImage, setBigImage] = useState(listSmallImage[0].image);
 
+
     return (
         <div className="product_item">
             <Nav namePage={item}/>
             <Box className="box_container--page">
-                <Grid container spacing={2}>
+                <Grid container spacing={3}>
                     <Grid item lg={5} md={6} xs={12}>
                         <InnerImageZoom 
                             src={bigImage} 
@@ -161,21 +199,13 @@ const ProductItem = (props) => {
                             <div className="list-size_prd">
                                 <span id="title">Size :</span>
                                 <>
-                                {listSize.map(item => {
-                                    return(
-                                        <span className="size option" key={item.id}>{`${item.size} KG`}</span>
-                                    )
-                                })}
+                                    <TabOptions listTab={listSize} type="size" unit="KG" />
                                 </>
                             </div>
                             <div className="list-material_prd">
                                 <span id="title">Material :</span>
                                 <>
-                                {listMaterial.map(item => {
-                                    return(
-                                        <span className="material option" key={item.id}>{item.material}</span>
-                                    )
-                                })}
+                                    <TabOptions listTab={listMaterial} type="material" unit="" />
                                 </>
                             </div>
                             <div className="quanlity">
@@ -200,24 +230,42 @@ const ProductItem = (props) => {
                                 >+</span>
                             </div>
                             <div className="list_action-btn">
-                                <span className="btn">heart</span>
+                                <span className="btn"><FavoriteBorderIcon /></span>
                                 <span className="btn">ADD TO CART</span>
                                 <span className="btn">BUY NOW</span>
                             </div>
                             <Divider />
                             <p className="code">
-                                <span>Product code:</span>
-                                <span>786-20-01</span>
+                                <span id="title">Product code :</span>
+                                <span style={{fontSize:"18px"}}>786-20-01</span>
                             </p>
                             <p className="social">
-                                <span>Share:</span>
-                                <ul>
-                                    <li>FB</li>
+                                <span id="title">Share :</span>
+                                <ul className="list_social-icons">
+                                    <li><FacebookIcon /></li>
+                                    <li><TwitterIcon /></li>
+                                    <li><InstagramIcon /></li>
+                                    <li><PinterestIcon /></li>
                                 </ul>
                             </p>
+                            <img src={ImageCheckOut} alt="checkout" style={{width:'100%', marginTop:"2rem"}} />
                         </div>
                     </Grid>
                 </Grid>
+                <ListTabDetail />
+                <Box className="relate_prd">
+                    <p className="title">YOU MAY ALSO LIKE</p>
+                    <h3>Related Product</h3>
+                    <Slider {...settingsRelatedPrd}>
+                        {listItemTest1.map(itemPrd => {
+                            return (
+                                <div className="items" key={Math.random()} style={{marginBottom:"1rem", marginRight:"1rem"}}>
+                                    <Product product={itemPrd}/>
+                                </div>
+                            )
+                        })}
+                    </Slider>
+                </Box>
             </Box>
         </div>
     )

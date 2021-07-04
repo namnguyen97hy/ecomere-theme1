@@ -7,7 +7,7 @@ import ImageCate1 from "./../../../assets/images/categories_1.jpg";
 import ImageCate2 from "./../../../assets/images/categories_2.jpg";
 import ImageCate3 from "./../../../assets/images/categories_3.jpg";
 import ImageCate4 from "./../../../assets/images/categories_4.jpg";
-;
+import { useHistory } from "react-router-dom"
 
 
 const ListCateFood = (props) => {
@@ -52,14 +52,15 @@ const ListCateFood = (props) => {
             }
           }
         ]
-      };
+    };
+    const history = useHistory()
 
     return (
         <div className="listCate">
             <Slider {...settings}> 
                  {listCateFood.map(item => {
                     return (
-                    <div className="cate_item" key={item.id}>
+                    <div className="cate_item" key={item.id} onClick={() => history.push(`/page/collections/${item.nameCate}`)}>
                         <div className="info">
                             <img src={item.imageCate} />
                             <span className="quanlity" >{`${item.quanlity} items`}</span>

@@ -396,6 +396,15 @@
             }
         }
     }
+    .banner_bottom {
+        height: auto;
+        .video {
+            img {
+                height: 372px;
+                width: 120%;
+            }
+        }
+    }
     .service {
         &_img {
             width: 108%;
@@ -447,7 +456,8 @@
                     font-size: 20px;
                 }
                 h3 {
-                    font-size: 50px;
+                    font-size: 27px;
+                    text-align: left;
                 }
                 h3.name {
                     margin-bottom: 1.5rem;
@@ -458,8 +468,10 @@
             position: relative;
             width: 100%;
             height: 100%;
+            margin-top: 0;
             img {
-    
+                height: 275px;
+                width: 120%;
             }
             span{
                 width: 100px;
@@ -584,13 +596,15 @@
             position: relative;
             width: 100%;
             height: 100%;
+            margin-top: 3rem;
             img {
-                height: 100%;
+                height:80%;
                 width: 100%;
             }
             span{
                 width: 60px;
                 height: 60px;
+                top: 42%;
                 svg {
                     font-size: 35px;
                 }
@@ -612,5 +626,8 @@
                 width: 75%!important;
             }
         }
+    }
+    .client_review {
+        margin-top: 0;
     }
 }

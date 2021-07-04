@@ -6,17 +6,17 @@ export const listShopMenuExtend = [
             {   
                 id:1,
                 name: "Fruit & Nuts",
-                path:""
+                path:"fruit&Nuts"
             },
             {   
                 id:2,
                 name: "Snacks Food",
-                path:""
+                path:"snack_food"
             },
             {
                 id:3,
                 name: "Organics Nuts",
-                path:""
+                path:"organics_nuts"
             },
         ]
     },
@@ -26,17 +26,17 @@ export const listShopMenuExtend = [
             {   
                 id:4,
                 name: "Oranges",
-                path:""
+                path:"oranges"
             },
             {   
                 id:5,
                 name: "Fresher BlueBerry",
-                path:""
+                path:"fresh_blueberry"
             },
             {
                 id:6,
                 name: "Fresher Salad",
-                path:""
+                path:"fresh_salad"
             },
         ]
     },
@@ -46,17 +46,17 @@ export const listShopMenuExtend = [
             {
                 id:7,
                 name: "Fresher Banana",
-                path:""
+                path:"fresh_banana"
             },
             {
                 id:8,
                 name: "Fresher Gala",
-                path:""
+                path:"fresh_gala"
             },
             {
                 id:9,
                 name: "Fresher Tomato",
-                path:""
+                path:"fresh_tomato"
             },
         ]
     }

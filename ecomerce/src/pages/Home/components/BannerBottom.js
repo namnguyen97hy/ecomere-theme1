@@ -32,7 +32,7 @@ const BannerBottom = (props) => {
     return (
         <div className="banner_bottom" style={{overflow:"hidden"}}>
             <Grid container spacing={2}>
-                <Grid item md={6} xs={12}>
+                <Grid item md={6} xs={12} sm={6}>
                     <div className="image">
                         <img src={ImageBanner} alt="left banner bottom" style={{width:"100%"}} />
                         <div className="text_content">
@@ -43,10 +43,10 @@ const BannerBottom = (props) => {
                         </div>
                     </div>
                 </Grid>
-                <Grid item md={1} xs={12}>
+                <Grid item md={1} xs={12} sm={1}>
                     
                 </Grid>
-                <Grid item md={5} xs={12}>
+                <Grid item md={5} xs={12} sm={5}>
                     <div className="video">
                         <img src={ImageVideo} alt="imageVideo" />
                         <span className="play_icon" onClick={() => setShowVideoModal(true)}><PlayArrowIcon /></span>

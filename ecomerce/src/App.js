@@ -27,7 +27,9 @@ function App() {
         component={withLayout(props => {
           return (
             <Suspense key={route.name} fallback={loading()}>
+              {route.roles.includes("User") && <Header />}
               <route.component {...props} />
+              {route.roles.includes("User") && <Footer />}
             </Suspense>
           );
         })}
@@ -37,10 +39,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App" >
-        <Header />
-        {/* <Redirect exact from=""  to="/page/home" /> */}
         {routes.map(route => renderRoute(route))}
-        <Footer />
       </div>
     </BrowserRouter>
   );

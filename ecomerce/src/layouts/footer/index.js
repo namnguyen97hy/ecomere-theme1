@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.scss"
 import { Container, Box, Grid } from "@material-ui/core";
 import ImageLogo from "../../assets/images/logo.png";
@@ -9,8 +9,11 @@ import PinterestIcon from '@material-ui/icons/Pinterest';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import RoomIcon from '@material-ui/icons/Room';
 import PhoneIcon from '@material-ui/icons/Phone';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const Footer = (props) => {
+    const [isShowExtend, setShowExtend] = useState();
+    const [isShow, setShow] = useState(false)
     return (
         <div className="footer">
             <Container maxWidth="xl">
@@ -28,8 +31,15 @@ const Footer = (props) => {
                             </ul>
                         </Grid>
                         <Grid item md={2} sm={4} xs={12}>
-                            <p className="footer_title">SERVICES</p>
-                            <ul className="list_footer_item">
+                            <p className="footer_title hidden">SERVICES</p>
+                            <div className="list_footer" onClick={() => {
+                                setShowExtend("service")
+                                setShow(!isShow)
+                                }}>
+                                <p className="footer_title">SERVICES</p>
+                                <span><ExpandMoreIcon /></span>
+                            </div>
+                            <ul className="list_footer_item" id={isShowExtend === "service"  && isShow ? "show" : ""}>
                                 <li>About Vegist</li>
                                 <li>Faq's</li>
                                 <li>Contact Us</li>
@@ -38,8 +48,15 @@ const Footer = (props) => {
                             </ul>
                         </Grid>
                         <Grid item md={2} sm={4} xs={12}>
-                            <p className="footer_title">PRIVACY & TERMS</p>
-                            <ul className="list_footer_item">
+                            <p className="footer_title hidden">PRIVACY & TERMS</p>
+                            <div className="list_footer" onClick={() => {
+                                setShowExtend("terms")
+                                setShow(!isShow)
+                                }}>
+                                <p className="footer_title">PRIVACY & TERMS</p>
+                                <span><ExpandMoreIcon /></span>
+                            </div>
+                            <ul className="list_footer_item" id={isShowExtend === "terms" && isShow ? "show" : ""}>
                                 <li>Payment Policy</li>
                                 <li>Privacy Policy</li>
                                 <li>Return Policy</li>
@@ -48,8 +65,15 @@ const Footer = (props) => {
                             </ul>
                         </Grid>
                         <Grid item md={2} sm={4} xs={12}>
-                            <p className="footer_title">MY ACCOUNT</p>
-                            <ul className="list_footer_item">
+                            <p className="footer_title hidden">MY ACCOUNT</p>
+                            <div className="list_footer" onClick={() => {
+                                setShowExtend("account")
+                                setShow(!isShow)
+                                }}>
+                                <p className="footer_title">MY ACCOUNT</p>
+                                <span><ExpandMoreIcon /></span>
+                            </div>
+                            <ul className="list_footer_item" id={isShowExtend === "account" && isShow ? "show" : ""}>
                                 <li>My Account</li>
                                 <li>My Cart</li>
                                 <li>Order History</li>
@@ -59,7 +83,7 @@ const Footer = (props) => {
                         </Grid>
                         <Grid item md={3} xs={12}>
                             <p className="footer_title">CONTACT VEGIST</p>
-                            <ul className="list_footer_item">
+                            <ul className="list_footer_item" style={{display:"block"}}>
                                 <li className="contact">
                                     <span className="icon"><RoomIcon /></span>
                                     <span>Wooster Parck Chowk Bazzar ,New York</span>

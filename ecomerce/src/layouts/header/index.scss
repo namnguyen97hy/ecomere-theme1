@@ -6,7 +6,6 @@
     width: 100%;
     background: white;
     z-index: 15;
-    padding-block: 1rem;
     box-shadow: 0 2px 10px -2px gray;
 }
 
@@ -83,13 +82,13 @@
                     position: relative;
                     margin-right: $margin_lg;
                     &:hover{
-                        .overlay{
+                        .overlay_collection{
                             display: block;
                             opacity: 0.45;
                             transition: all 0.3s ease;
                         }
                     }
-                    .overlay {
+                    .overlay_collection {
                         position:absolute;
                         background:gray;
                         top:0;
@@ -310,18 +309,18 @@
     }
 }
 }
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    height: 100vh;
+    background: rgba(146, 149, 153, 0.5);
+    }
 .search {
     display: none;
-    &_overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 2;
-        height: 100vh;
-        background: rgba(146, 149, 153, 0.5);
-        }
     &_container {
         position: absolute;
         top: -100%;
@@ -361,6 +360,81 @@
     display: block!important;
     transition: all 0.5s ease;
 }
+.cart {
+    display: none;
+    &_container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 20vw;
+        height: 100vh;
+        background: white;
+        z-index: 6;
+        padding: 1rem;
+        .cart_relative {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            #cart_icon {
+                cursor: pointer;
+                &:hover {
+                    svg {
+                        color: $color_yellow_primary;
+                    }
+                }
+            }
+            p {
+                font-size: 18px;
+                font-weight: 500;
+                span {
+                    color: $color_yellow_primary;
+                }
+            }
+            .product_item {
+                display: flex;
+                img {
+                    width: 75px;
+                }
+                .product_info {
+                    margin-left: 1rem;
+                    #name {
+                        cursor: pointer;
+                        font-size: 16px;
+                        &:hover {
+                            color: $color_yellow_primary;
+                        }
+                    }
+                    .fee {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+                }
+            }
+            .sub_total {
+                position: absolute;
+                bottom: 5vh;
+                right: 0;
+                left: 0;
+                width: 100%;
+                .total {
+                    display: flex;
+                    justify-content: space-between;
+                    font-weight: 700;
+                    font-size: 18px;
+                    .money {
+                        color: $color_yellow_primary;
+                    }
+                }
+            }
+        }
+    }
+    .showCartContainer {
+        right: 0;
+        transition: all 0.5s ease;
+    }
+}
 .showInput {
     top: 0;
 }
@@ -379,6 +453,11 @@
             }
         }
     }
+    .cart {
+        &_container {
+            width: 32vw;
+        }
+    }
     
 }
 @media screen and (max-width: 992px) {
@@ -391,6 +470,11 @@
             .menu_humberger{
                 font-size: 16px!important;
             }
+        }
+    }
+    .cart {
+        &_container {
+            width: 32vw;
         }
     }
     
@@ -412,14 +496,19 @@
                 }
             }
         }
-    }        
+    }  
+    .cart {
+        &_container {
+            width: 40vw;
+        }
+    }      
 }
 @media screen and (max-width: 576px) {
-    #header_menu {
-        padding: 1rem 1.5rem!important;
-    }
+    // #header_menu {
+    //     padding: 0rem 1.5rem!important;
+    // }
     .box_container{
-        padding: 0.5rem 0rem;
+        padding: 1rem 0rem 1rem 0!important;
         img.logo_img {
             width: 65px;
         }
@@ -436,6 +525,11 @@
                     font-size: 20px;
                 }
             }
+        }
+    }
+    .cart {
+        &_container {
+            width: 85vw;
         }
     }
     
