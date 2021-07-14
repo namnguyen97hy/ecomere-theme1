@@ -1,0 +1,268 @@
+@import "./../../../styles/index.scss";
+.product_item {
+    font-family: "Poppins";
+    p {
+        margin: 0.5rem 0;
+    }
+    ul {
+        margin-left: 0;
+        padding-left: 0;
+    }
+    li {
+        list-style-type: none;
+        display: inline-block;
+    }
+    .big_img {
+        width: 100%;
+    }
+    .small_img {
+        margin: 1rem 0.25rem;
+        width: 90%!important;
+        img {
+            width: 100%;
+
+        }
+    }
+    .active {
+        outline: 1px solid $color_yellow_primary;
+    }
+    .info_product {
+        #title {
+            color: #333333;
+            margin-right: 0.75rem;
+            font-size: 18px;
+            font-weight: $font-weight-bold-md;
+        }
+        .name {
+            font-size: 18px;
+            font-weight: 600!important;
+        }
+        .avaiable {
+            margin: 0.75rem 0;
+            .status {
+                color: $color_yellow_primary;
+                font-weight: $font-weight-bold-md
+            }
+        }
+        .price_prd {
+            font-size: 20px;
+            margin: 0.5rem 0;
+            .sale_price {
+                color: #333333;
+                margin-right: 0.5rem;
+                font-weight: $font-weight-bold-md;
+            }
+            .real_price {
+                color: #999999;
+                text-decoration: line-through;
+            }
+        }
+        ul.counter {
+            margin-top: 1rem;
+            li {
+                padding: 0.5rem;
+                margin-right: 1rem;
+                box-sizing: border-box;
+                background: $color_yellow_primary;
+                color: white;
+                width: 65px;
+                text-align: center;
+                height: 75px;
+                font-weight: $font-weight-bold-md;
+                border-radius: 5px;
+                p:nth-child(1) {
+                    font-size: 20px;
+                    margin-bottom: -0.5rem;
+                }
+            }
+        }
+        .desc_prd {
+            color: #999999;
+            margin: 1.5rem 0;
+        }
+        .list-material_prd {
+            margin: 0.5rem 0;
+        }
+        .list-material_prd, 
+        .list-size_prd {
+            display: flex;
+            align-items: center;
+        }
+        .active {
+            color: black;
+        }
+        .quanlity {
+            margin: 1rem 0;
+            .descrease,
+            .increase {
+                padding: 0.25rem 0.5rem;
+                background-color: #f7f7f7;
+                border-radius: 3px;
+                color: #999999;
+                text-align: center;
+                cursor: pointer;
+                &:hover {
+                    background-color: $color_yellow_primary;
+                    color: white;
+                    transition: all 0.2s ease;
+                }
+            }
+            input {
+                width: 50px;
+                margin: 0 0.5rem;
+                padding: 0.25rem;
+                outline: none;
+                font-size: 16px;
+                border: none;      
+            }
+        }
+        .list_action-btn {
+            display: flex;
+            align-items: center;
+            .btn {
+                padding: 0.75rem;
+                height: 45px;
+                border-radius: 5px;
+                margin: 0.5rem 0.5rem 1rem 0.5rem;
+                box-sizing: border-box;
+                background: $color_yellow_primary;
+                color: white;
+                cursor: pointer;
+            }
+        }
+        .social {
+            display: flex;
+            align-items: center;
+            .list_social-icons {
+                display: inline-block;
+                li {
+                    font-size: 18px;
+                    margin: 0 0.5rem;
+                    cursor: pointer;
+                    &:hover {
+                        svg {
+                            color: $color_yellow_primary;
+                            transition: all 0.3s ease;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.description {
+    .list_desc {
+        display: flex;
+        flex-direction: column;
+        .desc_li {
+            list-style-type: circle;
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+            svg {
+                font-size: 8px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+.reviews{
+    h4 {
+        font-size: 20px;
+        font-weight: $font-weight-bold-md
+    }
+    .write {
+        color: $color_yellow_primary;
+        display:inline-block;
+        border-bottom: 1.5px solid $color_yellow_primary;
+        cursor: pointer;
+    }
+    .table_review {
+        display: none;
+        .input_field {
+            margin: 1.5rem 0;
+            label {
+                display: block;
+                margin-bottom: 0.5rem;
+            }
+            input,
+            .area_text {
+                width: 100%;
+                padding: 0.75rem;
+                outline: none; 
+            }
+            .area_text {
+                min-height: 200px;
+            }
+        }
+    }
+    .show {
+        display: block;
+    }
+} 
+.comments {
+    width: 100%;
+    .quanlity {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .input_comment {
+        input {
+            padding: 1rem;
+            box-sizing: border-box;
+            width: 100%;
+            outline: none;
+        }
+    }
+    .fb {
+        display: flex;
+        justify-content: flex-start;
+        color: #3a559b;
+        cursor: pointer;
+    }
+}
+.size_chart {
+    img {
+        width: 100%;
+    }
+}
+.relate_prd {
+    margin-top: 5rem;
+    margin-bottom: 3rem!important;
+    .title {
+        text-align: center;
+    }
+}
+@media screen and (max-width:1200px) {
+    
+}
+@media screen and (max-width:992px) {
+    
+}
+@media screen and (max-width:768px) {
+    
+}
+@media screen and (max-width:576px) {
+    .MuiTabs-scroller.MuiTabs-fixed{
+        overflow-x: auto!important;
+        font-size: 15px;
+    }
+    ul.counter {
+        li {
+            width: 50px!important;
+            height: 65px!important;
+            font-size: 12px;
+        }
+    }
+    .list-material_prd, 
+    .list-size_prd {
+        .MuiTab-wrapper {
+            font-size: 13px;
+        }
+    }
+    .product_item .info_product .list_action-btn .btn {
+        margin: 0.5rem 0.5rem 0 0;
+        font-size: 14px;
+    }
+}

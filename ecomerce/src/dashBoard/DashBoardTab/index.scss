@@ -1,0 +1,200 @@
+
+@import "../../styles/index.scss";
+@keyframes active_activity {
+    0%{
+        transform: translateX(0) ;
+        opacity: 1;
+        color: #088178;
+    }
+    50%{
+        transform: translateX(1rem);
+        opacity: 0;
+        color: #088178;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+        color: #088178;
+    }
+}
+// color settings
+.paid,
+.checking,
+.refund {
+    padding:0.25rem 0.75rem;
+    display:inline-block;
+    border-radius:15px;
+    background:#daf4eb; 
+    color:#088f78;
+    font-size: 12px;
+    font-weight: 600;
+}
+.paid {
+    background:#daf4eb; 
+    color:#088f78;
+}
+.checking {
+    background:#fde4e4;
+        color:#f46b6b
+}
+.refund {
+    background:#fcf1df;
+        color:#f1b44c
+}
+
+
+// /////////////////////////////////////
+.dashboard_tab {
+    font-family: 'Spartan', sans-serif;
+    .name_table {
+        font-weight: $font-weight-bold-lg;
+    }
+    .summary_item {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        width: 100%;
+        &:hover {
+            transform: translateY(-10px);
+            transition: all 0.3s ease-in;
+            cursor: pointer;
+        }
+        .icon {
+            width: 52px;
+            height: 50px;
+            background: #cee6e4;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            svg {
+                color: #088178;
+            }
+        }
+        .info {
+            margin-left: 1rem;
+            color: #383e50;
+            .value {
+                font-size: 27px;
+                margin: 0.75rem 0 0.5rem 0;
+                font-weight: 550;
+                letter-spacing: 0.5px;
+                font-family: "Arial";
+            }
+            .desc {
+                font-size: 12.5px;
+            }
+        }
+    }
+    // new members
+    .new_members {
+        .member {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .info {
+                display: flex;
+                margin-top: 1rem;
+                img {
+                    width: 40px;
+                    height: 40px;
+                    margin-right: 0.75rem;
+                    border-radius: 50%;
+                }
+                .name{
+                    font-size: 15px;
+                    font-weight: 600;
+                }
+                .address {
+                    font-size: 13.5px;
+                    font-weight: $font-weight-bold-md;
+                    color: #b7bfbe;
+                }
+            }
+            .add_btn {
+                padding: 0.5rem 1.25rem;
+                background: #088178;
+                color: white;
+                border: none;
+                outline: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+    }
+    // recent_activity
+    .recent_activity {
+        position: relative;
+        &::before {
+            content: '';
+            height: 70%;
+            width: 1px;
+            background: #b7bfbe;
+            position: absolute;
+            z-index: 1;
+            top: 18%;
+            left: 4.5%;
+        }
+        .activity_item {
+            display: flex;
+            align-items: center;
+            margin: 1.25rem 0;
+            z-index: 2;
+            .icon_li {
+                svg {
+                    font-size: 20px;
+                }
+            }
+            #active {
+                animation: active_activity 1.5s infinite linear;
+            }
+            .time {
+                font-weight: 560;
+                color: #383e50;
+                margin: 0 1rem;
+            }
+            .icon_arrow {
+                margin-right: 1rem;
+                svg {
+                    color: #088178;
+                }
+            }
+            .content {
+                font-size: 14px;
+            }
+        }
+    }
+    // social_marketing
+    .social_marketing {
+        
+        .social_progress {
+            margin-top: 1.25rem;
+            position: relative;
+            .MuiLinearProgress-barColorPrimary{
+                background: #088178;
+            }
+            .MuiLinearProgress-root {
+                height: 16px;
+                width: 90%;
+                border-radius: 5px;
+            }
+            .social_name {
+                font-size: 12px;
+            }
+            .percent {
+                position: absolute;
+                right: -5px;
+                font-weight: 500;
+                top: 58%;
+                font-size: 13px;
+
+
+            }
+        }
+    }
+    // latest_order
+    .latest_order {
+        margin-top: 2rem;
+    }
+}

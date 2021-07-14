@@ -1,0 +1,41 @@
+@import "./../../styles/index.scss";
+.secondary_btn {
+    padding: 0.65rem 2rem;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: $color-yellow_primary;
+    color: white;
+    font-weight: 540;
+
+    &:hover {
+        background-color: transparent;
+        border: 1px solid $color_yellow_primary;
+        color: $color-yellow_primary;
+        transition: all 0.5s ease;
+    }
+}
+.full_width {
+    width: 100%!important;
+    text-align: center;
+}
+@media screen and (max-width: 1200px) {
+    .secondary_btn {
+        padding: 0.5rem 1.25rem;
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 992px) {
+
+}
+@media screen and (max-width: 768px) {
+    .secondary_btn {
+        padding: 0.75rem 1.5rem;
+    }
+}
+@media screen and (max-width: 576px) {
+    .secondary_btn {
+        padding: 0.5rem 1.25rem;
+        font-size: 13px;
+    }
+}

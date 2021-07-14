@@ -1,0 +1,106 @@
+@import "../../styles/index.scss";
+.cart_product {
+    font-family: "Poppins";
+    .title {
+        font-weight: 600 ;
+        font-size: 18px;
+    }
+    .quanlity_items {
+        border-bottom: 1px solid #333333;
+    }
+    &-item {
+        display: flex;
+        img {
+            width: 180px;
+        }
+        .product_info {
+            margin-left: 1.5rem;
+            span {
+                font-weight: 600;
+            }
+            p {
+                margin: 0.5rem 0;
+            }
+        }
+    }
+    #delete {
+        display: none;
+    }
+    .quanlity {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .numbers {
+            span {
+                width: 25px;
+                display: inline-block;
+                height: 25px;
+                background: #f7f7f7;
+                border-radius: 5px;
+                text-align: center;
+                line-height: 25px;
+                &:hover {
+                    background: $color_yellow-primary;
+                    cursor: pointer;
+                    color: white;
+                }
+            }
+            input {
+                width: 70px;
+                padding: 0.5rem 1rem;
+                height: 30px;
+                border: none;
+                box-sizing: border-box;
+                outline: none;
+            }
+        }
+    }
+    &-footer {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        span {
+            color: $color_yellow-primary;
+            border-bottom: 1px solid $color_yellow-primary;
+            cursor: pointer;
+        }
+    }
+    .bill {
+        background: #f7f7f7;
+        padding: 1rem;
+        .total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            p {
+                margin-bottom: 0;
+            }
+            span {
+                &:nth-child(2){
+                    font-weight: 600;
+                }
+            }
+        }
+        .input_form {
+            width: 100%;
+            margin-top: -0.25rem;
+            padding: 0.6rem 0.75rem;
+            box-sizing: border-box;
+            outline: none;
+            border-radius: 3px;
+            border: 1px solid #999999;
+            cursor: pointer;
+        }
+        .check_out {
+            display: flex;
+            justify-content: center;
+            span {
+                color: $color_yellow-primary;
+                border-bottom: 1px solid $color_yellow-primary;
+                cursor: pointer;
+            }
+        }
+    }
+
+}

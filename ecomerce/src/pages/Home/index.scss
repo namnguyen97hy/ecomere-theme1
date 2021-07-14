@@ -1,0 +1,637 @@
+@import "./../../styles/index.scss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400&display=swap');
+// ---------------------banner scss
+.banner {
+    margin-top: 12.5px;
+    &_item {
+        // background-image: url("./../../assets/images/banner_top.jpg");
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        &--content {
+            margin-left: 15vw;
+            p.type_food {
+                color: $color_yellow_primary;
+                font-weight: $font-weight-bold-md;
+                margin: 0;
+                font-size: 20px;
+            }
+            .name_food {
+                margin: 2rem 0;
+                color: #333333;
+                .bold {
+                    font-weight: $font-weight-bold-xl;
+                }
+                .normal {
+                    font-weight: $font-weight-bold-xs;
+                }
+            }
+        }
+    }
+}
+.carousel-control-next-icon, 
+.carousel-control-prev-icon {
+    background-color: $color_yellow_primary;
+    border-radius: 50%;
+    background-size: 50% 50%!important;
+}
+
+//--------------------- listcatefood scss
+.listCate {
+    margin-top: $margin_xl;
+    margin-bottom: 3.5rem;
+    .cate_item {
+        display: inline-block;
+        // width: 300px!important;
+        &:hover {
+            .btn {
+                background-color: none;
+                cursor: pointer;
+                transition: all 0.3s ease-in;
+                color: white;
+                background-image: linear-gradient(to right, #f29f3a, #f2df35);
+            }
+            .info{
+                .quanlity{
+                    color: $color_yellow_primary;
+                    transition: all 0.3s ease-in;
+                }
+            }
+        }
+        .info {
+            position: relative;
+            img {
+                width: 100%;
+            }
+            .quanlity {
+                position: absolute;
+                bottom: 20px;
+                left: 50%;
+                font-weight: $font-weight-bold-md;
+                transform: translateX(-50%);
+                padding: 0.25rem 1rem;
+                background-color: #f6f6f6;
+                box-shadow: 2px 2px 6px 2px #bcbcb3;
+                border-radius: 20px;
+            }
+        }
+        .btn {
+            margin-top: $margin_lg;
+            margin-bottom: 0.25rem;
+            width: 100%;
+            height: 50px;
+            padding: 0.5rem;
+            text-align: center;
+            font-size: 18px;
+            font-weight: $font-weight-bold-md;
+            background: white;
+            box-shadow: 2px 2px 6px 2px #c6c6c0;
+        }
+    }
+}
+.slick-slide {
+    padding: 0 1.5rem 0 0.5rem;
+}
+
+//----------------------service scss
+.service {
+    margin-top: $margin_xl;
+    h3{
+        text-align: center;
+    }
+    &_item {
+        display: flex;
+        align-items: center;
+        margin: 4rem 0;
+        span.icon {
+            width: 6.5rem;
+            height: 6.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 2px solid #e2e2e2;
+            margin-right: 2rem;
+            &:hover {
+                svg {
+                    color: $color_yellow_primary;
+                    transition: 0.3s ease;
+                }
+            }
+            svg {
+                font-size: 2rem;
+            }
+
+        }
+        p{
+            margin-bottom: 0.25rem;
+            font-size: 1.5rem;
+        }
+        .name {
+            font-weight: $font-weight-bold-md;
+            color: #333333;
+        }
+        .desc {
+            color: #a69999;
+        }
+    }
+    &_img{
+        width: 105%;
+        margin:4rem 0;
+    }
+}
+
+//--------------------- discoverProduct scss
+.discoverPrd {
+    h3{
+        text-align: center;
+    }
+    .listTypePrd {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        .typePrd {
+            margin: $margin_md;
+            font-weight: $font-weight-bold-md;
+            &:hover {
+                color: $color_yellow_primary;
+                transition: all 0.3s ease-in;
+                cursor: pointer;
+            }
+        }
+        #active {
+            color: $color_yellow_primary;
+            border-bottom: 2.5px solid $color_yellow_primary;
+        }
+
+    }
+    .listItem {
+    }
+}
+
+//---------------------- banner bottom scss
+.banner_bottom {
+    height: 600px;
+    margin-top: $margin_xl;
+    .image {
+        position: relative;
+        img {
+
+        }
+        .text_content {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding-left: 10%;
+            p {
+                color: $color_yellow_primary;
+                font-weight: $font-weight-bold-md;
+                text-transform: uppercase;
+                font-size: 18px;
+            }
+            h3 {
+                font-weight: $font-weight-bold-xl;
+                font-size: 40px;
+                letter-spacing: 3px;
+            }
+            h3.name {
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+    .video {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        img {
+
+        }
+        span{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            svg {
+                font-size: 45px;
+            }
+        }
+    }
+}
+#paperVideo {
+    width: 55%;
+    .video_iframe {
+        width: 100%;
+        height: 450px;
+    }
+}
+
+// ----------------------client review scss
+.client_review {
+    background-color: #f7f7f7;
+    width: 100%;
+
+    margin-top: 5rem;
+    padding: 3rem 0;
+    h3 {
+        margin: 3rem 0;
+    }
+    &--item {
+        background-color: white;
+        padding: 1.25rem;
+        box-shadow: 0 0 15px rgb(0 0 0 / 5%);
+        .star {
+            margin: 0.5rem 0;
+            span {
+                
+                svg {
+                    color: $color_yellow_primary;
+                    font-size: 16px;
+                }
+            }
+        }
+        .division {
+            // font-size: ;
+            font-weight: $font-weight-bold-md;
+            color: #333333;
+        }
+        .content {
+            color: #9f9999;
+            font-size: $font_md;
+            line-height: 1.8;
+            font-family: 'Poppins', sans-serif;
+
+        }
+        span.icon {
+            height: 50px;
+            width: 50px;
+            border-radius: 5px;
+            background-color: $color_yellow_primary;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            outline: 1px solid $color_yellow_primary;
+            outline-offset: 5px;
+            @keyframes moveY {
+                0% {
+                    transform: translateY(10px);
+                }
+                50% {
+                    transform: translateY(0px);
+                }
+                100% {
+                    transform: translateY(10px);
+                }
+            }
+            &:hover {
+                animation-name: moveY;
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+            }
+            
+            svg {
+                color: white;
+                font-size: $font-weight-bold-lg;
+                font-size: 35px;
+            }
+        }
+        .writter {
+            color:#333333;
+            margin-top: 1rem;
+            font-weight: $font-weight-bold-md;
+            font-size: $font_md;
+        }
+    }
+}
+
+// ----------------------recentNew scss
+.news {
+    font-family: "Poppins";
+    margin-top: 5rem;
+    padding: 0 0 3rem 0;
+    h3 {
+        margin-bottom: 3rem;
+    }
+    &_item{
+        .image_news {
+            width: 100%;
+            // height: 350px;
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+                &:hover {
+                    transform: scale(1.1);
+                    transition: all 0.3s ease-in;
+                    cursor: pointer;
+    
+                }
+            }
+        }
+        .title_news{
+            font-weight: $font-weight-bold-md;
+            font-size: 18px;
+            margin-top: 1rem;
+            &:hover {
+                color: $color_yellow_primary;
+                transition: all 0.3s ease-in;
+                cursor: pointer;
+            }
+        }
+        .content_news{
+            color: #9f9999;
+        }
+        .more{
+            font-size: 16px;
+            font-weight: $font-weight-bold-md;
+            color:$color_yellow_primary;
+            &:hover {
+                cursor: pointer;
+                span{
+                    transform: translateX(10px);
+                    transition: all 0.3s ease-in;
+                }
+            }
+            span{
+                display: inline-block;
+                margin-left: 0.5rem;
+                svg {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+// ----------------------listBrands scss
+.listBrands {
+    margin: 3rem 0;
+    .brand_item {
+        position: relative;
+        &:hover {
+            img {
+                filter: none;
+                transition: all 0.3s ease;
+            }
+        }
+        img {
+            -o-filter: grayscale(1);
+            filter: grayscale(1);
+        }
+    }
+}
+
+// --------------------------responsive ---------------------------------//
+@media screen and (max-width: 1200px) {
+    .banner {
+        &_item {
+            height: 65vh;
+            &--content {
+                margin-left: 10vw;
+            }
+        }
+    }
+    .banner_bottom {
+        height: auto;
+        .video {
+            img {
+                height: 372px;
+                width: 120%;
+            }
+        }
+    }
+    .service {
+        &_img {
+            width: 108%;
+            margin: 8rem 0;
+        }
+    }
+    // responsive video iframe
+    #paperVideo {
+        width: 80%;
+        .video_iframe {
+            height: 450px;
+        }
+    }
+   
+}
+@media screen and (max-width: 992px) {
+    .banner {
+        &_item {
+            height: 60vh;
+            &--content {
+                margin-left: 10vw;
+            }
+        }
+    }
+    .service {
+        &_img {
+            width: 100%;
+            margin: 1rem 0;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .banner {
+        &_item {
+            height: 50vh;
+            .name_food {
+                margin: 1.5rem 0;
+            }
+        }
+    }
+    .listCate {
+        margin-top: 2rem;
+    }
+    .banner_bottom {
+        .image {
+            .text_content {
+                padding-left: 10%;
+                p {
+                    font-size: 20px;
+                }
+                h3 {
+                    font-size: 27px;
+                    text-align: left;
+                }
+                h3.name {
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+        .video {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin-top: 0;
+            img {
+                height: 275px;
+                width: 120%;
+            }
+            span{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                svg {
+                    font-size: 45px;
+                }
+            }
+        }
+    }
+    // responsive video iframe
+    #paperVideo {
+        width: 92%;
+        .video_iframe {
+            height: 400px;
+        }
+    }
+}
+@media screen and (max-width: 576px) {
+    .banner {
+        &_item {
+            height: 45vh;
+            &--content {
+                margin-left: 4vw;
+                p.type_food {
+                    font-size: 14px;
+                }
+                .name_food {
+                    margin: 0.5rem 0;
+                    h2{
+                        font-size: 6vw
+                    }
+                }
+            }
+        }
+    }
+    .listCate {
+        margin-top: 2.5rem;
+        .cate_item {
+            .info {
+                .quanlity {
+                    bottom: 10px;
+                    font-weight: $font-weight-bold-md;
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 20px;
+                    font-size: 12px;
+                }
+            }
+            .btn {
+                margin-top: 1.5rem;
+                height: 35px;
+                font-size: 12px;
+            }
+        }
+    }
+    .slick-slide {
+        padding: 0 0.5rem 0 0.5rem;
+    }
+    .service {
+        margin-top: 3rem;
+        &_item {
+            margin: 2rem 0;
+            span.icon {
+                width: 4.5rem;
+                height: 4.5rem;
+                margin-right: 1.25rem;
+                svg {
+                    font-size: 1.25rem;
+                    &:hover {
+                        color: $color_yellow_primary;
+                        transition: all 0.3s ease-in;
+                    }
+                }
+    
+            }
+            p{
+                margin-bottom: 0.25rem;
+                font-size: 1rem;
+            }
+        }
+    }
+    .discoverPrd {
+        .listTypePrd {
+            span.typePrd {
+                margin: 0 0.45rem;
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+        .listItem {
+            .items {
+                margin-top: -2rem;
+            }
+        }
+    }
+    .banner_bottom {
+        .image {
+            .text_content {
+                padding-left: 8%;
+                p {
+                    font-size: 15px;
+                }
+                h3 {
+                    font-size: 27px;
+                    letter-spacing: 0.5px;
+                }
+                h3.name {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+        .video {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin-top: 3rem;
+            img {
+                height:80%;
+                width: 100%;
+            }
+            span{
+                width: 60px;
+                height: 60px;
+                top: 42%;
+                svg {
+                    font-size: 35px;
+                }
+            }
+        }
+    }
+    // responsive video iframe
+    #paperVideo {
+        width: 90%;
+        .video_iframe {
+            height: 250px;
+        }
+    }
+    .listBrands {
+        margin: 1.5rem 0;
+        .brand_item {
+            
+            img {
+                width: 75%!important;
+            }
+        }
+    }
+    .client_review {
+        margin-top: 0;
+    }
+}

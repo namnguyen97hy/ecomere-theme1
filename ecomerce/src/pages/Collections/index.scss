@@ -1,0 +1,58 @@
+@import "../../styles/index.scss";
+.collections {
+    margin-top: 3rem;
+    &_item {
+        width: 100%;
+        position: relative;
+        img{
+            width: 100%;
+        }
+        .info{
+            padding: 1rem 1.5rem;
+            border-radius: 5px;
+            font-size: 16px;
+            background: white;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            text-align: center;
+            cursor: pointer;
+            &:hover {
+                .shop_btn {
+                    height: 100%;
+                    transition: all 0.1s ease-in;
+                    visibility: visible;
+                }
+            }
+            p{
+                margin: 0;
+            }
+            .name {
+                font-size: 18px;
+                color: #333333;
+                font-weight: $font-weight-bold-md;
+            }
+            .quanlity {
+                font-size: 15px;
+                color: #999999;
+                font-weight: $font-weight-bold-xs;
+            }
+            .shop_btn {
+                position: absolute;
+                border-radius: 5px;
+                color: white;
+                font-weight: $font-weight-bold-md;
+                right: 0;
+                bottom: 0;
+                height: 0;
+                visibility: hidden;
+                left: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: $color_yellow_primary;
+            }
+        }
+    }
+}

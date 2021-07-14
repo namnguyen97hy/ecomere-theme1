@@ -1,0 +1,43 @@
+@import "./../../styles/index.scss";
+.nav {
+    background-color: #fafafa;
+    width: 100%;
+    margin-bottom: 8vh!important;
+    margin-top: 1vh!important;
+    span {
+        display: inline-block;
+    }
+    .home {
+        color: #7e807e;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &_line {
+        margin: 0 0.45rem;
+    }
+    #normal {
+        color: #7e807e!important;
+        cursor: pointer;
+    }
+    .name_page {
+        color: #333333;
+        font-weight: $font-weight-bold-md;
+    }
+}
+@media screen and (max-width:1200px) {
+    .nav {
+        margin-bottom: 3.5vh!important;
+    }
+}
+@media screen and (max-width:992px) {
+    
+}
+@media screen and (max-width:768px) {
+    
+}
+@media screen and (max-width:562px) {
+    .nav {
+        margin-top: 1.5vh!important;
+    }
+}
