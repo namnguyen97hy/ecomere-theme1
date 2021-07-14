@@ -162,6 +162,10 @@
                 cursor: pointer;
             }
         }
+        #active {
+            color: $color_yellow_primary;
+            border-bottom: 2.5px solid $color_yellow_primary;
+        }
 
     }
     .listItem {

@@ -1,0 +1,28 @@
+.add-product_tab {
+    .add-product_list {
+        margin-top: 2rem;
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 14px;
+        }
+        .input_field {
+            margin: 1.5rem 0 1.5rem 0;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .custom-file-upload {
+            background: #088f78;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1.25rem;
+            color: white;
+            height: 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+    }
+}

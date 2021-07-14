@@ -11,6 +11,7 @@ const CollectionItem = React.lazy(() => import("../pages/Collections/CollectionI
 const Blogs = React.lazy(() => import("../pages/Blogs"));
 const BlogItem = React.lazy(() => import("../pages/Blogs/BlogItem"));
 const Cart = React.lazy(() => import("../pages/Cart"));
+
 // const Register = React.lazy(() => import("../pages/Register"));
 // const Login = React.lazy(() => import("../pages/Login"));
 // const Account = React.lazy(() => import("../pages/Account"));
@@ -18,7 +19,17 @@ const Cart = React.lazy(() => import("../pages/Cart"));
 // const WishList = React.lazy(() => import("../pages/WishList"));
 // const Checkout = React.lazy(() => import("../pages/Checkout"));
 
-const Dashboard = React.lazy(() => import("../dashBoard"));
+const OrderTab = React.lazy(() => import("../dashBoard/OrderTab"));
+const DashBoardTab = React.lazy(() => import("../dashBoard/DashBoardTab"));
+const AdminTab = React.lazy(() => import("../dashBoard/AdminTab"))
+const ProductTab = React.lazy(() => import("../dashBoard/ProductTab"))
+const ReviewTab = React.lazy(() => import("../dashBoard/ReviewTab"))
+const BrandsTab = React.lazy(() => import("../dashBoard/BrandsTab"))
+const SettingTab = React.lazy(() => import("../dashBoard/SettingTab"));
+const AddProductTab = React.lazy(() => import("../dashBoard/AddProductTab"));
+const TransactionsTab = React.lazy(() => import("../dashBoard/TransactionsTab"));
+const AccountTab = React.lazy(() => import("../dashBoard/AccountTab"))
+
 
 const routes = [
     {
@@ -148,14 +159,96 @@ const routes = [
     //     title:"Checkout"
     // },
     {
-        path:"/admin/dashboard",
-        name:"DashBoard",
+        path:"/vegist-backend/dashboard",
+        name:"DashBoardTab",
         route:Route,
-        component: Dashboard,
+        component: DashBoardTab,
         roles:["Admin"],
         exact:true,
-        title:"DashBoard"
+        title:"DashBoardTab"
     },
+    {
+        path:"/vegist-backend/order",
+        name:"OrderTab",
+        route:Route,
+        component: OrderTab,
+        roles:["Admin"],
+        exact:true,
+        title:"OrderTab"
+    },
+    {
+        path:"/vegist-backend/product",
+        name:"ProductTab",
+        route:Route,
+        component: ProductTab,
+        roles:["Admin"],
+        exact:true,
+        title:"ProductTab"
+    },
+    {
+        path:"/vegist-backend/admin",
+        name:"AdminTab",
+        route:Route,
+        component: AdminTab,
+        roles:["Admin"],
+        exact:true,
+        title:"DashBoardTab"
+    },
+    {
+        path:"/vegist-backend/add product",
+        name:"AddProductTab",
+        route:Route,
+        component: AddProductTab,
+        roles:["Admin"],
+        exact:true,
+        title:"AddProductTab"
+    },
+    {
+        path:"/vegist-backend/transactions",
+        name:"Transactionsab",
+        route:Route,
+        component: TransactionsTab,
+        roles:["Admin"],
+        exact:true,
+        title:"Transactionsab"
+    },
+    {
+        path:"/vegist-backend/accounts",
+        name:"AccountTab",
+        route:Route,
+        component: AccountTab,
+        roles:["Admin"],
+        exact:true,
+        title:"AccountTab"
+    },
+    {
+        path:"/vegist-backend/reviews",
+        name:"ReviewTab",
+        route:Route,
+        component: ReviewTab,
+        roles:["Admin"],
+        exact:true,
+        title:"ReviewTab"
+    },
+    {
+        path:"/vegist-backend/brands",
+        name:"BrandsTab",
+        route:Route,
+        component: BrandsTab,
+        roles:["Admin"],
+        exact:true,
+        title:"BrandsTab"
+    },
+    {
+        path:"/vegist-backend/settings",
+        name:"SettingsTab",
+        route:Route,
+        component: SettingTab,
+        roles:["Admin"],
+        exact:true,
+        title:"SettingsTab"
+    },
+    
 ]
 export {routes}
 

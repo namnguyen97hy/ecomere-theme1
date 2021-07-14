@@ -49,7 +49,7 @@ const Product = (props) => {
         }
     }));
     const classes = useStyles();
-    const salePrice = Math.floor(product.price * (1 - product.salePercent / 100));
+    const salePrice = Math.floor((product.price ? product.price : 0) * (1 - product.salePercent / 100));
     const renderStar = () => {
         let arr= [];
         for(let i =0; i < 5; i++){

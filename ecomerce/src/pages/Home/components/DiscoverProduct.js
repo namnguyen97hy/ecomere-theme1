@@ -1,14 +1,16 @@
 import { makeStyles } from "@material-ui/styles";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { connect, useDispatch } from "react-redux";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import { getListProduct } from "../redux/productSlice";
 import Product from "./../../../components/Product";
-import { listItemTest } from "../../../constants/const";
 
 
 const DiscoverProducts = (props) => {
-    const [isShowQuickView, setShowQuickView] = useState(false);
+    const {listProduct} = props;
+    const dispatch = useDispatch();
     const useStyles = makeStyles((theme) => ({
         paper: {
           position: 'absolute',
@@ -74,18 +76,32 @@ const DiscoverProducts = (props) => {
           }
         ]
     };
+    const [typePrd, setTypePrd] = useState("dryFruits")
+    useEffect(() => {
+      dispatch(getListProduct());
+      
+    },[])
+
+    // convert listItem to listItemCarousel
+    const listRenderProduct = listProduct.filter((item,index) => item.type === typePrd);
+    const listProductDiscover = [];
+    let i = 0;
+    while(i < listRenderProduct.length) {
+      listProductDiscover.push([listRenderProduct[i],listRenderProduct[i+1]]);
+      i+=2;
+    }
 
     return (
         <div className="discoverPrd">
             <h3>Discover Products</h3>
             <div className="listTypePrd">
-                <span className="typePrd">ORAGANIC DRYFRUITS</span>
-                <span className="typePrd">FRESH MEAT</span>
-                <span className="typePrd">GREEN SEAFOOD</span>
+                <span className="typePrd" id={typePrd === "dryFruits" ? "active" : ""} onClick={() => setTypePrd("dryFruits")}>ORAGANIC DRYFRUITS</span>
+                <span className="typePrd" id={typePrd === "freshMeat" ? "active" : ""} onClick={() => setTypePrd("freshMeat")}>FRESH MEAT</span>
+                <span className="typePrd" id={typePrd === "seaFood" ? "active" : ""} onClick={() => setTypePrd("seaFood")}>GREEN SEAFOOD</span>
             </div>
             <div className="listItem"> 
                 <Slider {...settings}>
-                    {listItemTest.map(itemPrd => {
+                    {listProductDiscover.map(itemPrd => {
                         return (
                             <div className="items" key={Math.random()} style={{display:"flex", flexDirection:"column"}}>
                                 <Product product={itemPrd[0]}/>
@@ -93,9 +109,22 @@ const DiscoverProducts = (props) => {
                             </div>
                         )
                     })}
+                    {/* {listProduct.map((itemPrd,index) => {
+                     return (
+                        <div className="items" >
+                          <Product product={itemPrd} />
+                        </div>
+                      )
+                    })}  */}
                 </Slider>
             </div>
         </div>
     )
 }
-export default DiscoverProducts;
+const mapStateToProps = (state) => {
+  return {
+    listProduct: state.product.listProduct
+  }
+}
+
+export default connect(mapStateToProps, null) (DiscoverProducts);

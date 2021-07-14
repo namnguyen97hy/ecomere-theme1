@@ -5,6 +5,7 @@ import { routes } from "./routes";
 import React, { Component, Suspense } from 'react';
 import { BrowserRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import DashBoard from "./dashBoard";
 
 function App() {
   const loading = () => <div>Loading ...</div>
@@ -17,6 +18,24 @@ function App() {
   
     return connect()(HOC);
   }
+  // function render component of front-end or backend(dashboard page)
+  const renderComponent = (route,props) => {
+    if(route.roles.includes("User"))
+        return (
+          <>
+          <Header />
+          <route.component {...props} />
+          <Footer />
+          </>
+        )
+      else {
+        return (
+          <DashBoard renderChildren={() => {
+            return <route.component {...props} /> 
+          }} />
+        )
+      }
+  }
   const renderRoute = (route) => {
     return (
       <route.route 
@@ -27,9 +46,8 @@ function App() {
         component={withLayout(props => {
           return (
             <Suspense key={route.name} fallback={loading()}>
-              {route.roles.includes("User") && <Header />}
-              <route.component {...props} />
-              {route.roles.includes("User") && <Footer />}
+
+              {renderComponent(route,props)}
             </Suspense>
           );
         })}

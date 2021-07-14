@@ -1,13 +1,14 @@
-import { Grid } from "@material-ui/core";
-import React from "react";
 import ArrowForwardOutlinedIcon from '@material-ui/icons/ArrowForwardOutlined';
+import React, { useEffect } from "react";
+import { connect, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import { testListNews } from "../../../constants/const";
+import { getListRecentNews } from "../redux/recentNewSlice";
 
 const RecentNew = (props) => {
-
+    const {listRecentNews} = props;
     const settings = {
         dots: false,
         infinite: true,
@@ -42,20 +43,26 @@ const RecentNew = (props) => {
           }
         ]
     };
+    const history = useHistory();
+    const dispatch = useDispatch()
+    useEffect(() => {
+      dispatch(getListRecentNews())
+    },[])
     return (
         <div className="news">
             <h3>Recent News</h3>
             
             <Slider {...settings}>
-                {testListNews.map(item => {
+                {listRecentNews.map(item => {
+                  const path = item.title.toLowerCase().split(' ').join("-");
                     return (
                         <div className="news_item" key={item.id}>
                             <div className="image_news">
-                                <img src={item.image} alt="imageNews" />
+                                <img src={item.recentNewsImg} alt="imageNews" onClick={() => history.push(`/page/blog/news/${path}`)} />
                             </div>
-                            <h4 className="title_news">{item.title}</h4>
-                            <p className="content_news">{item.content} </p>
-                            <p className="more">
+                            <h4 className="title_news" onClick={() => history.push(`/page/blog/news/${path}`)}>{item.title}</h4>
+                            <p className="content_news">{item.firstText.substring(0,80).concat(" ...")} </p>
+                            <p className="more" onClick={() => history.push(`/page/blog/news/${path}`)}>
                                 Read More
                                 <span>
                                     <ArrowForwardOutlinedIcon />
@@ -68,4 +75,9 @@ const RecentNew = (props) => {
         </div>
     )
 }
-export default RecentNew
+const mapStateToProps = (state) => {
+  return {
+    listRecentNews : state.recentNews.listRecentNews
+  }
+}
+export default connect(mapStateToProps, null)(RecentNew)

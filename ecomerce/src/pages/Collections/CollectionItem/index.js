@@ -243,8 +243,8 @@ const CollectionItem = (props) => {
                 <Box className="box_container">
                     <Grid container spacing={3}>
                         <Grid item lg={3} md={3} xs={12}>
-                            <div className="filter">
-                                <div className="cate">
+                            <div className="filter_collection">
+                                <div className="cate_collect">
                                     <span className="filter_title" onClick={() => setShowCateExtend(!isShowCateExtend)}>
                                         <p id="title">Categories</p>
                                         <span><ExpandMoreIcon /></span>

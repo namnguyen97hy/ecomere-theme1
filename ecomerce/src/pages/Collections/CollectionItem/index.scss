@@ -2,21 +2,19 @@
 @import "./../../../styles/index.scss";
 .collection_item {
     scroll-behavior: smooth;
-    .filter {
+    .filter_collection {
         border: 1px solid #EEEEEE;
         padding: 1rem 1rem;
         font-weight: 450;
-        &_title {
-            display: flex;
+        .filter_title {
+            display: none;
             justify-content: space-between;
             align-items: center;
-            opacity: 0;
-            visibility: hidden;
         }
         .list_filter {
             
         }
-        .cate {
+        .cate_collect {
             ::-webkit-scrollbar {
                 width:5px;
                 height: 30px;
@@ -189,10 +187,9 @@
 }
 @media screen  and (max-width:992px) {
     .collection_item {
-        .filter {
-            &_title {
-                opacity: 1;
-                visibility: visible;
+        .filter_collection {
+            .filter_title {
+                display: flex!important;
                 font-size: 18px;
             }
             .title_desktop {
@@ -209,14 +206,14 @@
 }
 @media screen  and (max-width:768px) {
     .collection_item {
-        .filter {
+        .filter_collection {
 
         }
     }
 }
 @media screen  and (max-width:576px) {
     .collection_item {
-        .filter {
+        .filter_collection {
             #title {
                 font-size: 15px;
             }

@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { connect, useDispatch } from "react-redux";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import brandImg1 from "./../../../assets/images/brand1.png";
-import brandImg2 from "./../../../assets/images/brand2.png";
-import brandImg3 from "./../../../assets/images/brand3.png";
-import brandImg4 from "./../../../assets/images/brand4.png";
-import brandImg5 from "./../../../assets/images/brand5.png";
+import { getListBrands } from "../redux/brandSlice";
 
 const ListBrands = (props) => {
+    const dispatch = useDispatch();
+    const {listBrands} = props;
+    useEffect(() => {
+        dispatch(getListBrands())
+    },[])
     const settings = {
         dots: false,
         infinite: true,
@@ -45,44 +47,11 @@ const ListBrands = (props) => {
           }
         ]
     };
-    const testListBrands = [
-        {
-            id:1,
-            image: brandImg1
-        },
-        {
-            id:2,
-            image: brandImg2
-        },
-        {
-            id:3,
-            image: brandImg3
-        },
-        {
-            id:4,
-            image: brandImg4
-        },
-        {
-            id:5,
-            image: brandImg5
-        },
-        {
-            id:6,
-            image: brandImg3
-        },
-        {
-            id:7,
-            image: brandImg1
-        },
-        {
-            id:8,
-            image: brandImg2
-        },
-    ]
+   
     return (
         <div className="listBrands">
             <Slider {...settings}>
-                {testListBrands.map(item => {
+                {listBrands.map(item => {
                     return (
                         <div className="brand_item" key={item.id} >
                             <img src={item.image} alt="img_brand" />
@@ -93,4 +62,9 @@ const ListBrands = (props) => {
         </div>
     )
 }
-export default ListBrands
+const mapStateToProps = (state) => {
+    return {
+        listBrands : state.brands.listBrands
+    }
+}
+export default connect(mapStateToProps, null)(ListBrands)
